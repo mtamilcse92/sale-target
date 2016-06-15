@@ -1,0 +1,81 @@
+<h1> SALES TARGET INDEX</h1><br>
+<hr>
+
+<style>
+td,th{
+	font-size:25px;
+	margin:5px;
+	text-align: left;
+	padding:5px;
+}
+table{
+	margin-top:100px;
+	margin-left:400px;
+	border-collapse: collapse;
+}
+
+th { background-color: gray;
+height:80px;
+color: white;}
+
+a{
+	display: block;
+	height:30px;
+	background-color: #795548;
+	color: white;
+	margin-bottom:-30px;
+	text-decoration: none;
+	}
+.a1{
+	background-color: #64DD17;
+}
+
+.a2{
+	background-color: #F44336;
+}
+
+.a3{
+	background-color: #FF9800;
+}
+
+.a{
+	width:100px;
+	padding:15px;
+	background-color: #795548;
+	text-align: center;
+}
+</style>
+<table border ="2px	">
+
+<tr>
+<th>NAME</th>
+<th> AREA-ONE</th>
+<th> AREA-TWO</th>
+<th> AREA-THREE</th>
+<th> AREA-FOUR</th>
+<th> ACTION</th>
+</tr>
+<% _.each(model, function(model){ %>
+<tr>
+<td><%= model.name %></td>
+<td>PLACE:<%= model.areacheckone %><br>
+TARGET:<%= model.target1*(model.percentage1)/100 %><br>
+PERCENT:<%= model.percentage1 %></td>
+
+<td>PLACE:<%= model.areachecktwo %><br>
+TARGET:<%= model.target2*(model.percentage2)/100 %><br>
+PERCENT:<%= model.percentage2 %></td>
+<td>PLACE:<%= model.areacheckthree %><br>
+TARGET:<%= model.target3*(model.percentage3)/100 %><br>
+PERCENT:<%= model.percentage3 %></td>
+<td>PLACE:<%= model.areacheckfour %><br>
+TARGET:<%= model.target4*(model.percentage4)/100 %><br>
+PERCENT:<%= model.percentage4 %></td>
+
+<td><a class="a1" href ="/sales/<%= model.id %>/edit">EDIT</a><br>
+<a class="a2" href ="/sales/<%= model.id %>/delete">DELETE</a><br>
+<a class="a3" href ="/sales/<%= model.id %>">SHOW</a><br></td>	
+</tr>
+<% }); %>
+</table>
+<a class="a" href="/sales/new">NEW</a><br>

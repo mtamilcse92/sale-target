@@ -1,0 +1,140 @@
+<h1>EDIT SALES TARGET</h1>
+<hr>
+<style>
+lable{
+	margin-top:5px;
+	width:150px;
+	font-size:22px;
+	float:left;
+	color:white;
+}
+input{
+	margin-top:10px;
+	margin-left:30px;
+	width:300px;
+	height:30px;
+}
+.button{
+
+	margin-left:40%;
+	width:100px;
+	height:30px;
+
+}
+form{
+
+	background-color: #FF9800;
+	padding: 10px;
+	margin-top:100px;
+	width:1000px;
+	height:500px;
+	margin-left:300px;
+
+}
+select{
+	width:100px;
+	height:20px;
+	margin-left:10px;
+}
+.text{
+	margin-left:140px;
+}
+
+
+
+</style>
+
+
+</style>
+<form action="/sales/<%= model.id %>" method="post">
+<lable>Sales man name:</lable>
+<input type="text" name="name" placeholder="enter name" value="<%= model.name %>" required><br>
+<lable>Area's':</lable>
+<input type="text" name="area1" placeholder="enter area one" value="<%= model.area1 %>" required><br>
+<lable>Area's':</lable>
+<input type="text" name="area2" placeholder="enter area two" value="<%= model.area2 %>" required><br>
+<lable>Area's':</lable>
+<input type="text" name="area3" placeholder="enter area three" value="<%= model.area3 %>" required><br>
+<lable>Area's':</lable>
+<input type="text" name="area4" placeholder="enter area four" value="<%= model.area4 %>" required><br>
+<lable>List & Target 1:</lable>
+<select onclick="displayname()" name="areacheckone" required>
+  <option id="areaid1" value="<%= model.areacheckone %>" selected></option>
+  <option id="areaid2"></option>
+  <option id="areaid3"></option>
+  <option id="areaid4"></option>
+  <option id="areaid5"></option>
+</select><input type="number" name="target1" placeholder="enter target amount" value="<%= model.target1 %>" required>
+<input type="number" name="percentage1" placeholder="enter percentage amount" value="<%= model.percentage1 %>" required><br>
+
+<lable>List & Target 2:</lable>
+<select onclick="displayname1()" name="areachecktwo" required>
+  <option id="areaid11" value="<%= model.areachecktwo %>" selected></option>
+  <option id="areaid12"></option>
+  <option id="areaid13"></option>
+  <option id="areaid14"></option>
+  <option id="areaid15"></option>
+</select><input type="number" name="target2" placeholder="enter target amount" value="<%= model.target2 %>" required>
+<input type="number" name="percentage2" placeholder="enter percentage amount" value="<%= model.percentage2 %>" required><br>
+
+<lable>List & Target 3:</lable>
+<select onclick="displayname2()" name="areacheckthree" required>
+  <option id="areaid21" value="<%= model.areacheckthree %> selected></option>
+  <option id="areaid22"></option>
+  <option id="areaid23"></option>
+  <option id="areaid24"></option>
+  <option id="areaid25"></option>
+</select><input type="number" name="target3" placeholder="enter target amount" value="<%= model.target3 %>" required>
+<input type="number" name="percentage3" placeholder="enter percentage amount" value="<%= model.percentage3 %>" required><br>
+
+<lable>List & Target 4:</lable>
+<select onclick="displayname3()" name="areacheckfour" required>
+  <option id="areaid31" value="<%= model.areacheckfour %> selected></option>
+  <option id="areaid32"></option>
+  <option id="areaid33"></option>
+  <option id="areaid34"></option>
+  <option id="areaid35"></option>
+</select><input type="number" name="target4" placeholder="enter target amount" value="<%= model.target4 %>" required>
+<input type="number" name="percentage4" placeholder="enter percentage amount" value="<%= model.percentage4 %>" required><br>
+
+
+<script>
+
+function displayname(event) {
+
+ document.getElementById("areaid1").innerHTML = document.getElementById("area1").value;
+ document.getElementById("areaid2").innerHTML = document.getElementById("area2").value;
+ document.getElementById("areaid3").innerHTML = document.getElementById("area3").value;
+ document.getElementById("areaid4").innerHTML = document.getElementById("area4").value;
+
+}
+
+function displayname1(event) {
+
+ document.getElementById("areaid11").innerHTML = document.getElementById("area1").value;
+ document.getElementById("areaid12").innerHTML = document.getElementById("area2").value;
+ document.getElementById("areaid13").innerHTML = document.getElementById("area3").value;
+ document.getElementById("areaid14").innerHTML = document.getElementById("area4").value;
+
+}
+
+function displayname2(event) {
+
+ document.getElementById("areaid21").innerHTML = document.getElementById("area1").value;
+ document.getElementById("areaid22").innerHTML = document.getElementById("area2").value;
+ document.getElementById("areaid23").innerHTML = document.getElementById("area3").value;
+ document.getElementById("areaid24").innerHTML = document.getElementById("area4").value;
+
+}
+
+function displayname3(event) {
+
+ document.getElementById("areaid31").innerHTML = document.getElementById("area1").value;
+ document.getElementById("areaid32").innerHTML = document.getElementById("area2").value;
+ document.getElementById("areaid33").innerHTML = document.getElementById("area3").value;
+ document.getElementById("areaid34").innerHTML = document.getElementById("area4").value;
+
+}
+</script>
+<input class="button" type="submit" name="EDIT" value="UPDATE">
+</form>
